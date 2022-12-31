@@ -1,3 +1,5 @@
+import { P } from "vitest/dist/global-60f880c6";
+
 interface User {
   id: string;
   firstName: string;
@@ -14,7 +16,7 @@ interface Post {
  * How do we type this return statement so it's both
  * User AND { posts: Post[] }
  */
-export const getDefaultUserAndPosts = (): unknown => {
+export const getDefaultUserAndPosts = (): User & { posts: Post[] } => {
   return {
     id: "1",
     firstName: "Matt",
